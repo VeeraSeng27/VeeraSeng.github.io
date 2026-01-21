@@ -6,52 +6,52 @@
   <title>Veeraphone Sengchiam | CS Projects</title>
   <style>
     :root { 
-      /* New Modern Professional Palette */
-      --bg: #0f172a;      /* Deep Slate Navy */
-      --card: #1e293b;    /* Polished Charcoal */
-      --text: #f8fafc;    /* Crisp White */
-      --muted: #94a3b8;   /* Cool Silver/Grey */
-      --accent: #38bdf8;  /* Tech Blue */
+      /* Cyber Sunset Palette */
+      --bg: #120d1d;      /* Deep Eggplant */
+      --card: #1c162d;    /* Muted Purple */
+      --text: #f0eeff;    /* Ice White */
+      --muted: #9d94b8;   /* Lavender Grey */
+      --accent: #ff7e67;  /* Soft Coral */
     }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: 'Inter', system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); line-height: 1.5; }
-    a { color: inherit; text-decoration: none; transition: 0.2s; }
+    body { margin:0; font-family: 'Inter', system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; transition: 0.3s; }
     .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
     
-    header { display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between; margin-bottom: 40px; }
-    h1 { margin:0; font-size: 38px; letter-spacing: -0.02em; }
-    .tagline { margin:8px 0 0; color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
+    header { display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between; margin-bottom: 50px; }
+    h1 { margin:0; font-size: 42px; letter-spacing: -1px; background: linear-gradient(to right, #ff7e67, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .tagline { margin:10px 0 0; color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
     
     .btns { display:flex; gap:12px; flex-wrap:wrap; }
     .btn {
-      display:inline-block; padding:10px 20px; border-radius:8px; 
-      background:var(--card); border:1px solid rgba(255,255,255,0.1);
-      font-size: 14px; font-weight: 500;
+      display:inline-block; padding:10px 22px; border-radius:12px; 
+      background:var(--card); border:1px solid rgba(255,126,103,0.1);
+      font-size: 14px; font-weight: 600;
     }
-    .btn:hover { background: rgba(255,255,255,0.05); transform: translateY(-1px); }
-    .btn.primary { background: var(--accent); border:none; color:#0f172a; font-weight:700; }
-    .btn.primary:hover { opacity: 0.9; }
+    .btn:hover { border-color: var(--accent); background: rgba(255,126,103,0.05); }
+    .btn.primary { background: var(--accent); border:none; color:#120d1d; }
+    .btn.primary:hover { opacity: 0.9; transform: scale(1.02); }
 
-    section { margin: 48px 0; }
-    h2 { margin: 0 0 20px; font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+    section { margin: 50px 0; }
+    h2 { margin: 0 0 24px; font-size: 24px; color: var(--accent); position: relative; padding-left: 15px; }
+    h2::before { content: ""; position: absolute; left: 0; top: 20%; height: 60%; width: 4px; background: var(--accent); border-radius: 2px; }
     
-    .grid { display:grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .grid { display:grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
     .card {
-      background: var(--card); border:1px solid rgba(255,255,255,0.05);
-      border-radius: 12px; padding: 24px; transition: 0.3s;
+      background: var(--card); border: 1px solid rgba(157,148,184,0.1);
+      border-radius: 20px; padding: 28px; transition: 0.3s ease;
     }
-    .card:hover { border-color: var(--accent); }
-    .card h3 { margin:0 0 8px; font-size: 20px; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(255,126,103,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .card h3 { margin:0 0 10px; font-size: 22px; }
     
-    .meta { color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 12px; opacity: 0.8; }
-    ul { margin: 16px 0 0 20px; color: var(--muted); font-size: 15px; }
-    li { margin-bottom: 8px; }
+    .meta { color: #a78bfa; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    ul { margin: 18px 0 0 20px; color: var(--muted); font-size: 15px; }
+    li { margin-bottom: 10px; }
 
-    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 20px; }
-    .chip { font-size: 11px; color: var(--text); background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); padding:4px 12px; border-radius: 999px; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 24px; }
+    .chip { font-size: 11px; color: var(--accent); background: rgba(255,126,103,0.1); border: 1px solid rgba(255,126,103,0.2); padding:5px 14px; border-radius: 8px; font-weight: 600; }
     
-    .links { display:flex; gap:12px; flex-wrap:wrap; margin-top: 20px; }
-    footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--muted); font-size: 14px; text-align: center; }
+    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
 <body>
@@ -59,42 +59,42 @@
     <header>
       <div>
         <h1>Veeraphone Sengchiam</h1>
-        <p class="tagline">Computer Science B.S. | Specialized in AI + Cybersecurity. I build reliable systems with Python, Java, and MySQL.</p>
+        <p class="tagline">Computer Science B.S. | Focusing on AI + Cybersecurity at CSU Stanislaus. Building efficient, secure database systems.</p>
       </div>
       <div class="btns">
         <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="https://github.com/YOURUSERNAME">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/YOURUSERNAME">LinkedIn</a>
+        <a class="btn" href="#">GitHub</a>
+        <a class="btn" href="#">LinkedIn</a>
       </div>
     </header>
 
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <h2>Project Highlights</h2>
       <div class="grid">
         <article class="card">
-          <div class="meta">MySQL • Python • Database Design</div>
+          <div class="meta">MySQL • Python • CS4250</div>
           <h3>NFL Relational Database</h3>
-          <p>Designed a web-enabled database for analyzing NFL teams, coaches, and historical statistics.</p>
+          <p>Created a comprehensive database system for analyzing NFL stats, teams, and awards.</p>
           <ul>
-            <li>Engineered relational schema from ER diagrams with full data integrity.</li>
-            <li>Automated data imports using Python scripts for efficient record management.</li>
-            <li>Implemented complex SQL queries for real-time performance analytics.</li>
+            <li>Engineered relational schema using ER diagrams to ensure data integrity.</li>
+            <li>Automated data generation and import using Python scripts.</li>
+            <li>Built web-enabled queries for analytics and record management.</li>
           </ul>
           <div class="chips">
-            <span class="chip">SQL</span><span class="chip">Data Normalization</span><span class="chip">PHP</span>
+            <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">PHP</span>
           </div>
         </article>
 
         <article class="card">
           <div class="meta">Operating Systems • Linux</div>
-          <h3>SteamOS Performance Study</h3>
-          <p>Technical analysis of gaming optimizations within the Linux kernel, focusing on scheduling and graphics.</p>
+          <h3>SteamOS Performance Analysis</h3>
+          <p>A technical investigation into how Linux kernels are optimized for gaming performance.</p>
           <ul>
-            <li>Analyzed CPU scheduling tradeoffs for low-latency gaming.</li>
-            <li>Evaluated the Proton compatibility layer for Windows-based software.</li>
+            <li>Analyzed CPU scheduling and memory management tradeoffs.</li>
+            <li>Researched the impact of the Proton layer on software compatibility.</li>
           </ul>
           <div class="chips">
-            <span class="chip">Systems</span><span class="chip">Performance Tuning</span>
+            <span class="chip">Linux</span><span class="chip">Systems</span>
           </div>
         </article>
       </div>
@@ -104,16 +104,16 @@
       <h2>About Me</h2>
       <div class="card">
         <p>
-          I am currently completing my B.S. in Computer Science at **CSU Stanislaus** with a focus on **Cybersecurity**. 
-          I have hands-on experience building software systems that emphasize performance, security, and scalability. 
-          Through my coursework, I have developed a strong foundation in client-server applications using Java sockets, 
-          multithreaded programming, and relational database design.
+          I am a Computer Science student at **CSU Stanislaus** with a deep interest in **Cybersecurity**. 
+          My technical background includes building multithreaded Java applications, designing secure relational databases 
+          with MySQL, and working in Linux-based environments. I enjoy tackling complex system challenges 
+          and building tools that emphasize both performance and reliability.
         </p>
       </div>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> Veeraphone Sengchiam • Built for CS4250</div>
+      <div>© <span id="year"></span> Veeraphone Sengchiam • CS Stanislaus</div>
     </footer>
   </div>
 
