@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name | CS Projects</title>
+  <style>
+    :root { --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#a8b0d6; --accent:#7c5cff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    a { color: inherit; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 28px 18px; }
+    header { display:flex; flex-wrap:wrap; gap:16px; align-items:flex-end; justify-content:space-between; margin: 10px 0 26px; }
+    h1 { margin:0; font-size: 34px; line-height:1.1; }
+    .tagline { margin:8px 0 0; color: var(--muted); max-width: 60ch; }
+    .btns { display:flex; gap:10px; flex-wrap:wrap; }
+    .btn {
+      display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none;
+      background:var(--card); border:1px solid rgba(255,255,255,0.08);
+    }
+    .btn.primary { background: var(--accent); border:none; color:white; font-weight:600; }
+    section { margin: 28px 0; }
+    h2 { margin: 0 0 12px; font-size: 20px; }
+    .grid { display:grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card {
+      background: var(--card); border:1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 16px;
+    }
+    .card h3 { margin:0 0 6px; font-size: 18px; }
+    .meta { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+    ul { margin: 10px 0 0 18px; color: var(--text); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
+    .chip { font-size: 12px; color: var(--muted); border:1px solid rgba(255,255,255,0.12); padding:6px 10px; border-radius: 999px; }
+    footer { margin-top: 34px; color: var(--muted); font-size: 14px; }
+    .links { display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Your Name</h1>
+        <p class="tagline">Computer Science B.S. | Interested in AI + Cybersecurity. I build practical projects in Python, databases, and systems.</p>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="https://github.com/YOURUSERNAME" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="mailto:you@email.com">Email</a>
+      </div>
+    </header>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>NFL Relational Database (MySQL)</h3>
+          <p class="meta">MySQL • Python • phpMyAdmin</p>
+          <p>Designed and implemented a relational database and wrote queries to analyze teams, coaches, and awards.</p>
+          <ul>
+            <li>Built schema from ER diagram and enforced keys/relationships</li>
+            <li>Generated and imported data using Python scripts</li>
+            <li>Created queries for inserts/updates/deletes and analytics</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">SQL</span><span class="chip">Database Design</span><span class="chip">Data Generation</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Repo</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Demo / Screenshots</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>SteamOS Case Study</h3>
+          <p class="meta">Operating Systems • Linux • Performance</p>
+          <p>A technical write-up on how SteamOS optimizes gaming performance (scheduler, memory, graphics, Proton).</p>
+          <ul>
+            <li>Explained CPU scheduling and performance tradeoffs</li>
+            <li>Compared design choices to Windows and other distros</li>
+            <li>Presented findings in slides for class</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Linux</span><span class="chip">OS Concepts</span><span class="chip">Technical Writing</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Slides</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Network Tools & Analysis</h3>
+          <p class="meta">Computer Networks • Subnetting • Traceroute</p>
+          <p>Hands-on networking exercises including subnet design and packet path analysis.</p>
+          <ul>
+            <li>Designed subnets and calculated ranges/masks</li>
+            <li>Interpreted traceroute results and hop behavior</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Networking</span><span class="chip">Troubleshooting</span>
+          </div>
+          <div class="links">
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Write-up</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="card">
+        <p><strong>Languages:</strong> Python, SQL, Java, C/C++ (edit this)</p>
+        <p><strong>Tools:</strong> Git/GitHub, Linux, MySQL/MariaDB, VS Code (edit this)</p>
+        <p><strong>Topics:</strong> Databases, Operating Systems, Networking, Algorithms (edit this)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          Write 3–5 sentences about what you’re aiming for and what you like building.
+          Keep it simple and specific: what you’ve worked on, what you want next, and what you’re good at.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Your Name • Built with HTML/CSS</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
