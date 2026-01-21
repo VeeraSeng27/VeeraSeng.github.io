@@ -5,34 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Veeraphone Sengchiam | CS Projects</title>
   <style>
-    :root { --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#a8b0d6; --accent:#7c5cff; }
+    :root { 
+      /* New Modern Professional Palette */
+      --bg: #0f172a;      /* Deep Slate Navy */
+      --card: #1e293b;    /* Polished Charcoal */
+      --text: #f8fafc;    /* Crisp White */
+      --muted: #94a3b8;   /* Cool Silver/Grey */
+      --accent: #38bdf8;  /* Tech Blue */
+    }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); }
-    a { color: inherit; }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 28px 18px; }
-    header { display:flex; flex-wrap:wrap; gap:16px; align-items:flex-end; justify-content:space-between; margin: 10px 0 26px; }
-    h1 { margin:0; font-size: 34px; line-height:1.1; }
-    .tagline { margin:8px 0 0; color: var(--muted); max-width: 60ch; }
-    .btns { display:flex; gap:10px; flex-wrap:wrap; }
+    body { margin:0; font-family: 'Inter', system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); line-height: 1.5; }
+    a { color: inherit; text-decoration: none; transition: 0.2s; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    
+    header { display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between; margin-bottom: 40px; }
+    h1 { margin:0; font-size: 38px; letter-spacing: -0.02em; }
+    .tagline { margin:8px 0 0; color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
+    
+    .btns { display:flex; gap:12px; flex-wrap:wrap; }
     .btn {
-      display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none;
-      background:var(--card); border:1px solid rgba(255,255,255,0.08);
+      display:inline-block; padding:10px 20px; border-radius:8px; 
+      background:var(--card); border:1px solid rgba(255,255,255,0.1);
+      font-size: 14px; font-weight: 500;
     }
-    .btn.primary { background: var(--accent); border:none; color:white; font-weight:600; }
-    section { margin: 28px 0; }
-    h2 { margin: 0 0 12px; font-size: 20px; }
-    .grid { display:grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .btn:hover { background: rgba(255,255,255,0.05); transform: translateY(-1px); }
+    .btn.primary { background: var(--accent); border:none; color:#0f172a; font-weight:700; }
+    .btn.primary:hover { opacity: 0.9; }
+
+    section { margin: 48px 0; }
+    h2 { margin: 0 0 20px; font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    .grid { display:grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
     .card {
-      background: var(--card); border:1px solid rgba(255,255,255,0.08);
-      border-radius: 16px; padding: 16px;
+      background: var(--card); border:1px solid rgba(255,255,255,0.05);
+      border-radius: 12px; padding: 24px; transition: 0.3s;
     }
-    .card h3 { margin:0 0 6px; font-size: 18px; }
-    .meta { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
-    ul { margin: 10px 0 0 18px; color: var(--text); }
-    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
-    .chip { font-size: 12px; color: var(--muted); border:1px solid rgba(255,255,255,0.12); padding:6px 10px; border-radius: 999px; }
-    footer { margin-top: 34px; color: var(--muted); font-size: 14px; }
-    .links { display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px; }
+    .card:hover { border-color: var(--accent); }
+    .card h3 { margin:0 0 8px; font-size: 20px; }
+    
+    .meta { color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 12px; opacity: 0.8; }
+    ul { margin: 16px 0 0 20px; color: var(--muted); font-size: 15px; }
+    li { margin-bottom: 8px; }
+
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 20px; }
+    .chip { font-size: 11px; color: var(--text); background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); padding:4px 12px; border-radius: 999px; }
+    
+    .links { display:flex; gap:12px; flex-wrap:wrap; margin-top: 20px; }
+    footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
 <body>
@@ -40,97 +59,61 @@
     <header>
       <div>
         <h1>Veeraphone Sengchiam</h1>
-        <p class="tagline">Computer Science B.S. | Interested in AI + Cybersecurity. I build practical projects in Python, databases, and systems.</p>
+        <p class="tagline">Computer Science B.S. | Specialized in AI + Cybersecurity. I build reliable systems with Python, Java, and MySQL.</p>
       </div>
       <div class="btns">
         <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="https://github.com/YOURUSERNAME" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="mailto:you@email.com">Email</a>
+        <a class="btn" href="https://github.com/YOURUSERNAME">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOURUSERNAME">LinkedIn</a>
       </div>
     </header>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>Featured Projects</h2>
       <div class="grid">
         <article class="card">
-          <h3>NFL Relational Database (MySQL)</h3>
-          <p class="meta">MySQL • Python • phpMyAdmin</p>
-          <p>Designed and implemented a relational database and wrote queries to analyze teams, coaches, and awards.</p>
+          <div class="meta">MySQL • Python • Database Design</div>
+          <h3>NFL Relational Database</h3>
+          <p>Designed a web-enabled database for analyzing NFL teams, coaches, and historical statistics.</p>
           <ul>
-            <li>Built schema from ER diagram and enforced keys/relationships</li>
-            <li>Generated and imported data using Python scripts</li>
-            <li>Created queries for inserts/updates/deletes and analytics</li>
+            <li>Engineered relational schema from ER diagrams with full data integrity.</li>
+            <li>Automated data imports using Python scripts for efficient record management.</li>
+            <li>Implemented complex SQL queries for real-time performance analytics.</li>
           </ul>
           <div class="chips">
-            <span class="chip">SQL</span><span class="chip">Database Design</span><span class="chip">Data Generation</span>
-          </div>
-          <div class="links">
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Repo</a>
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Demo / Screenshots</a>
+            <span class="chip">SQL</span><span class="chip">Data Normalization</span><span class="chip">PHP</span>
           </div>
         </article>
 
         <article class="card">
-          <h3>SteamOS Case Study</h3>
-          <p class="meta">Operating Systems • Linux • Performance</p>
-          <p>A technical write-up on how SteamOS optimizes gaming performance (scheduler, memory, graphics, Proton).</p>
+          <div class="meta">Operating Systems • Linux</div>
+          <h3>SteamOS Performance Study</h3>
+          <p>Technical analysis of gaming optimizations within the Linux kernel, focusing on scheduling and graphics.</p>
           <ul>
-            <li>Explained CPU scheduling and performance tradeoffs</li>
-            <li>Compared design choices to Windows and other distros</li>
-            <li>Presented findings in slides for class</li>
+            <li>Analyzed CPU scheduling tradeoffs for low-latency gaming.</li>
+            <li>Evaluated the Proton compatibility layer for Windows-based software.</li>
           </ul>
           <div class="chips">
-            <span class="chip">Linux</span><span class="chip">OS Concepts</span><span class="chip">Technical Writing</span>
-          </div>
-          <div class="links">
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Slides</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Network Tools & Analysis</h3>
-          <p class="meta">Computer Networks • Subnetting • Traceroute</p>
-          <p>Hands-on networking exercises including subnet design and packet path analysis.</p>
-          <ul>
-            <li>Designed subnets and calculated ranges/masks</li>
-            <li>Interpreted traceroute results and hop behavior</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Networking</span><span class="chip">Troubleshooting</span>
-          </div>
-          <div class="links">
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Write-up</a>
+            <span class="chip">Systems</span><span class="chip">Performance Tuning</span>
           </div>
         </article>
       </div>
     </section>
 
     <section>
-      <h2>Skills</h2>
-      <div class="card">
-        <p><strong>Languages:</strong> Python, SQL, Java, C/C++ (edit this)</p>
-        <p><strong>Tools:</strong> Git/GitHub, Linux, MySQL/MariaDB, VS Code (edit this)</p>
-        <p><strong>Topics:</strong> Databases, Operating Systems, Networking, Algorithms (edit this)</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>About</h2>
+      <h2>About Me</h2>
       <div class="card">
         <p>
-          I am currently completing my B.A. in Computer Science with a focus on Cybersecurity at CSU Stanislaus
-          and have hands-on experience building software systems that emphasize performance, reliability, and scalability
-          Through my coursework and projects, I have developed applications using Python, Java, SQL(MySQL/MariaDB),
-          and JavaScript, and I am comfortable working in Linux-based environments. I have built a client-server 
-          applications using Java sockets, implemented multithreading, and designed relational databases with strong data 
-          integrity and validation 
+          I am currently completing my B.S. in Computer Science at **CSU Stanislaus** with a focus on **Cybersecurity**. 
+          I have hands-on experience building software systems that emphasize performance, security, and scalability. 
+          Through my coursework, I have developed a strong foundation in client-server applications using Java sockets, 
+          multithreaded programming, and relational database design.
         </p>
       </div>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> Veeraphone Sengchiam • Built with HTML/CSS</div>
+      <div>© <span id="year"></span> Veeraphone Sengchiam • Built for CS4250</div>
     </footer>
   </div>
 
@@ -139,6 +122,5 @@
   </script>
 </body>
 </html>
-
 
 
