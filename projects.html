@@ -6,104 +6,148 @@
   <title>VEERAPHONE SENGCHIAM | CS Projects</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-  :root { 
-    --bg: #120d1d;      
-    --card: #1c162d;    
-    --text: #f0eeff;    
-    --muted: #9d94b8;   
-    --accent: #ff7e67;  
-  }
+    :root { 
+      --bg: #120d1d;      
+      --card: #1c162d;    
+      --text: #f0eeff;    
+      --muted: #9d94b8;   
+      --accent: #ff7e67;  
+    }
 
-  * { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-  body { 
-    margin:0; 
-    font-family: 'Inter', system-ui, Arial, sans-serif; 
-    background:var(--bg); 
-    color:var(--text); 
-    line-height: 1.6; 
-  }
+    body { 
+      margin:0; 
+      font-family: 'Inter', system-ui, Arial, sans-serif; 
+      background:var(--bg); 
+      color:var(--text); 
+      line-height: 1.6; 
+    }
 
-  a { color: inherit; text-decoration: none; transition: 0.3s; }
+    a { color: inherit; text-decoration: none; transition: 0.3s; }
 
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-  
-  header { 
-    display:flex; 
-    flex-wrap:wrap; 
-    gap:20px; 
-    align-items:flex-end; 
-    justify-content:space-between; 
-    margin-bottom: 50px; 
-  }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    
+    header { 
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:20px; 
+      align-items:flex-end; 
+      justify-content:space-between; 
+      margin-bottom: 50px; 
+    }
 
-  h1 { 
-    margin:0; 
-    font-size: 42px; 
-    letter-spacing: -1px; 
-    background: linear-gradient(to right, #ff7e67, #a78bfa); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    font-weight: 800;
-  }
+    h1 { 
+      margin:0; 
+      font-size: 42px; 
+      letter-spacing: -1px; 
+      background: linear-gradient(to right, #ff7e67, #a78bfa); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      font-weight: 800;
+    }
 
-  .tagline { margin:10px 0 0; color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
-  
-  .btns { display:flex; gap:12px; flex-wrap:wrap; }
-  .btn {
-    display:inline-block; padding:10px 22px; border-radius:12px; 
-    background:var(--card); border:1px solid rgba(255,126,103,0.1);
-    font-size: 14px; font-weight: 600;
-  }
-  .btn:hover { border-color: var(--accent); background: rgba(255,126,103,0.05); }
-  .btn.primary { background: var(--accent); border:none; color:#120d1d; }
+    .tagline { margin:10px 0 0; color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
+    
+    .btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn {
+      display:inline-block; padding:10px 22px; border-radius:12px; 
+      background:var(--card); border:1px solid rgba(255,126,103,0.1);
+      font-size: 14px; font-weight: 600;
+    }
+    .btn:hover { border-color: var(--accent); background: rgba(255,126,103,0.05); }
+    .btn.primary { background: var(--accent); border:none; color:#120d1d; }
 
-  section { margin: 50px 0; }
-  h2 { margin: 0 0 24px; font-size: 24px; color: var(--accent); position: relative; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
-  h2::before { content: ""; position: absolute; left: 0; top: 20%; height: 60%; width: 4px; background: var(--accent); border-radius: 2px; }
-  
-  .grid { 
-    display: grid; 
-    gap: 24px; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    align-items: stretch; /* Ensures cards are equal height */
-  }
+    section { margin: 50px 0; }
+    h2 { margin: 0 0 24px; font-size: 24px; color: var(--accent); position: relative; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    h2::before { content: ""; position: absolute; left: 0; top: 20%; height: 60%; width: 4px; background: var(--accent); border-radius: 2px; }
+    
+    .grid { 
+      display: grid; 
+      gap: 24px; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    }
 
-  .card {
-    background: var(--card); 
-    border: 1px solid rgba(157,148,184,0.1);
-    border-radius: 20px; 
-    padding: 28px; 
-    transition: 0.3s ease;
-    display: flex; 
-    flex-direction: column;
-    height: 100%; /* Force card to fill grid cell */
-  }
+    .card {
+      background: var(--card); 
+      border: 1px solid rgba(157,148,184,0.1);
+      border-radius: 20px; 
+      padding: 28px; 
+      transition: 0.3s ease;
+      display: flex; 
+      flex-direction: column;
+    }
 
-  .card:hover { transform: translateY(-5px); border-color: rgba(255,126,103,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-  .card h3 { margin:0 0 10px; font-size: 22px; font-weight: 700; }
-  
-  .meta { color: #a78bfa; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-  
-  /* Image Fix */
-  .card img { 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    margin: 15px 0;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
+    .card:hover { transform: translateY(-5px); border-color: rgba(255,126,103,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .card h3 { margin:0 0 10px; font-size: 22px; font-weight: 700; }
+    
+    .meta { color: #a78bfa; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    
+    .card img { 
+      max-width: 100%; 
+      height: auto; 
+      border-radius: 10px; 
+      margin: 10px 0;
+      cursor: pointer;
+    }
 
-  ul { margin: 18px 0 0 20px; color: var(--muted); font-size: 14px; padding: 0; list-style-type: none; }
-  li { margin-bottom: 10px; position: relative; padding-left: 15px; }
-  li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+    ul { margin: 18px 0 0 20px; color: var(--muted); font-size: 14px; padding: 0; list-style-type: none; }
+    li { margin-bottom: 10px; position: relative; padding-left: 15px; }
+    li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
 
-  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: auto; padding-top: 20px; }
-  .chip { font-size: 11px; color: var(--accent); background: rgba(255,126,103,0.1); border: 1px solid rgba(255,126,103,0.2); padding:5px 14px; border-radius: 8px; font-weight: 600; }
-  
-  footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
-</style>
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: auto; padding-top: 20px; }
+    .chip { font-size: 11px; color: var(--accent); background: rgba(255,126,103,0.1); border: 1px solid rgba(255,126,103,0.2); padding:5px 14px; border-radius: 8px; font-weight: 600; }
+    
+    /* LIGHTBOX CSS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      overflow: auto;
+    }
 
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .mySlides { display: none; text-align: center; }
+    .mySlides img { max-height: 80vh; width: auto; max-width: 100%; border-radius: 8px; }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 25px;
+      color: #fff; font-size: 40px; font-weight: bold; transition: 0.3s;
+      cursor: pointer; z-index: 1001;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      user-select: none;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+    }
+
+    .next { right: 0; }
+    .prev { left: 0; }
+
+    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -124,91 +168,37 @@
     <section id="projects">
       <h2>Project Highlights</h2>
       <div class="grid">
+        
         <article class="card">
           <div class="meta">MySQL • PHP • CS4250</div>
           <h3>NFL Relational Database</h3>
-          
-          <!-- Images used to open the lightbox -->
-          <div class="row">
-            <div class="column">
-              <img src="NFL db img 1.png" oneclick="openModal();currentSlide(1)" class="hover-shadow">
-            </div>
-            <div class="column">
-              <img src="NFL db img 2.png" oneclick="openModal();currentSlide(2)" class="hover-shadow">
-            </div>
-            <div class="column">
-              <img src="NFL db img 3.png" oneclick="openModal();currentSlide(3)" class="hover-shadow">
-            </div>
+          <div style="display: flex; gap: 5px;">
+            <img src="NFL db img 1.png" onclick="openModal();currentSlide(1)" style="width: 33%">
+            <img src="NFL db img 2.png" onclick="openModal();currentSlide(2)" style="width: 33%">
+            <img src="NFL db img 3.png" onclick="openModal();currentSlide(3)" style="width: 33%">
           </div>
-          <!-- The Modal/Lightbox -->
-          <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>span>
-            <div class="modal-content">
-
-              <div class="mySlides">
-                <div class="numbertext">1 / 4</div>
-                <img src="NFL db img 1.png" style="width:100%">
-              </div>
-               <div class="mySlides">
-                <div class="numbertext">2 / 4</div>
-                <img src="NFL db img 2.png" style="width:100%">
-              </div>
-
-               <div class="mySlides">
-                <div class="numbertext">3 / 4</div>
-                <img src="NFL db img 3.png" style="width:100%">
-              </div>
-              <!-- Next/previous controls -->
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <!-- Caption text -->
-              <div class="caption-container">
-                <p id="caption"></p>
-              </div>
-
-    <!-- Thumbnail image controls -->
-              <div class="column">
-                <img class="demo" src="NFL db img 1.png" onclick="currentSlide(1)" alt="Nature">
-              </div>
-
-              <div class="column">
-                <img class="demo" src="NFL db img 2.png" onclick="currentSlide(2)" alt="Snow">
-              </div>
-
-              <div class="column">
-                <img class="demo" src="NFL db img 3.png" onclick="currentSlide(3)" alt="Mountains">
-              </div>
-            </div>
-          </div>
-
-              
           <p>Developed a web-enabled database system for the CS4250 project at CSU Stanislaus.</p>
           <ul>
-            <li>Engineered relational schema based on NFL references and images.</li>
+            <li>Engineered relational schema based on NFL references.</li>
             <li>Implemented data integrity using a server hosted on dragon.csustan.edu.</li>
-            <li>Created analytics queries to compare historical data to real-world systems.</li>
+            <li>Created analytics queries to compare historical data.</li>
           </ul>
           <div class="chips">
             <span class="chip">Database Design</span><span class="chip">MySQL</span>
           </div>
         </article>
+
         <article class="card">
-          <div class="meta">Communication Networks • Eclipse</div>
+          <div class="meta">Java • TCP Sockets</div>
           <h3>Tic-Tac-Toe Game</h3>
-           <img src="Tic-Tac-Toe.png" alt="Tic-Tac-Toe Game" width="468" height="362">
-          <p>Developed a network-based Tic-Tac-Toe game using Java, TCP sockets, and
-            multithreading. Implemented a client–server architecture with synchronized game
-            state over TCP streams. Designed a Java Swing GUI with event-driven logic and
-            game state validation. </p>
-          
+          <img src="Tic-Tac-Toe.png" alt="Tic-Tac-Toe Game">
+          <p>Developed a network-based game using Java, TCP sockets, and multithreading.</p>
           <ul>
-            <li>Included a GUI design with handling for button clicks</li>
-            <li>Network-based Tic-tac-toe game using TCP sockets, multithreading, and Java Swing GUI</li>
+            <li>Client–server architecture with synchronized game state.</li>
+            <li>Java Swing GUI with event-driven logic.</li>
           </ul>
           <div class="chips">
             <span class="chip">TCP Sockets</span><span class="chip">Java Swing GUI</span>
-          
           </div>
         </article>
 
@@ -217,15 +207,34 @@
           <h3>Network Tools & Analysis</h3>
           <p>Practical application of networking concepts, including subnetting and path analysis.</p>
           <ul>
-            <li>Calculated subnet masks and IP ranges for network design.</li>
+            <li>Calculated subnet masks and IP ranges.</li>
             <li>Interpreted traceroute results to diagnose hop behavior.</li>
           </ul>
           <div class="chips">
             <span class="chip">Subnetting</span><span class="chip">Traceroute</span>
           </div>
         </article>
+
       </div>
     </section>
+
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <img src="NFL db img 1.png">
+        </div>
+        <div class="mySlides">
+          <img src="NFL db img 2.png">
+        </div>
+        <div class="mySlides">
+          <img src="NFL db img 3.png">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </div>
 
     <footer>
       <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
@@ -233,7 +242,46 @@
   </div>
 
   <script>
+    // Update year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lightbox Logic
+    let slideIndex = 1;
+
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+
+    // Close modal when clicking outside of image
+    window.onclick = function(event) {
+      let modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
   </script>
 </body>
 </html>
