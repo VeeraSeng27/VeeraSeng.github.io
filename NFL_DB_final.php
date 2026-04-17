@@ -1,6 +1,3 @@
-<?php
-// index.php
-include 'db_connect.php';
 
 // --- CONFIGURATION ---
 // STRICT WHITELIST: Only these exact table names are allowed.
@@ -20,9 +17,9 @@ function get_table_info($conn, $table) {
     if (!in_array($table, $TABLES)) return ['cols' => [], 'pk' => null];
 
     $cols = []; $pk = null;
-    $res = $conn->query("SHOW COLUMNS FROM " . $conn->real_escape_string($table));
+    $res = $conn->query("SHOW COLUMNS FROM " . pg_escape_string($table));
     if ($res) {
-        while ($row = $res->fetch_assoc()) {
+        while ($row = $pg_fetch_assoc($res)) {
             $cols[] = $row['Field'];
             if ($row['Key'] == 'PRI') $pk = $row['Field'];
         }
@@ -48,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             // NOTE: Ideally, even this should be restricted, but for a management tool, 
             // we assume the user is authorized. 
-            if ($conn->query($sql) === TRUE) set_msg("Success: Command executed.", "success");
-            else set_msg("SQL Error: " . $conn->error);
+            if (pg_query($conn, $sql) === TRUE) set_msg("Success: Command executed.", "success");
+            else set_msg("SQL Error: " pg_last_error($conn));
         }
     }
     // 2. GUI INSERT
@@ -75,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $conn->prepare("INSERT INTO $table (" . implode(',', $cols) . ") VALUES (" . implode(',', $qs) . ")");
             $stmt->bind_param($types, ...$params);
             if ($stmt->execute()) set_msg("Inserted new record into $table.", "success");
-            else set_msg("Insert Error: " . $conn->error);
+            else set_msg("Insert Error: " . pg_last_error($conn));
         } else {
             set_msg("Security Violation: Invalid Table.");
         }
@@ -272,7 +269,7 @@ $offset = ($page - 1) * $limit;
             else $sql .= " ORDER BY 1 DESC"; 
             $sql .= " LIMIT $offset, $limit";
             
-            $res = $conn->query($sql);
+            $res =  pg_query($conn, $sql);
         } else {
             echo "<div class='alert alert-error'>Invalid Table Selected</div>";
             $res = false;
@@ -350,7 +347,7 @@ $offset = ($page - 1) * $limit;
                 </tr>
                 <?php 
                 if ($res && $res->num_rows > 0) {
-                    while($row = $res->fetch_assoc()) {
+                    while($row = $pg_fetch_assoc($res)) {
                         echo "<tr><td>";
                         if ($pk) {
                             echo "<a href='index.php?view=edit&table=$t&id=".$row[$pk]."' class='btn btn-primary' style='padding:4px 8px; font-size:0.8em; margin-right:5px;'>Edit</a>";
@@ -502,7 +499,7 @@ $offset = ($page - 1) * $limit;
 
                 <?php
                 echo "<div class='table-wrapper'><table><tr>";
-                foreach($result->fetch_fields() as $f) {
+                foreach(($i = 0; $i < pg_num_fields($result); $i++) { $name = pg_field_name($result, $i); ... } as $f) {
                     $new_dir = ($sort_col == $f->name && $sort_dir == 'ASC') ? 'DESC' : 'ASC';
                     $arrow = ($sort_col == $f->name) ? ($sort_dir == 'ASC' ? ' &#9650;' : ' &#9660;') : '';
                     $sort_link = "index.php?view=".urlencode($view)."&val=".urlencode($val)."&limit=$limit&page=1&sort_col={$f->name}&sort_dir=$new_dir";
@@ -518,7 +515,7 @@ $offset = ($page - 1) * $limit;
                 echo "</table></div>";
             } else {
                 echo "<p>No results found (or query blocked).</p>";
-                if ($conn->error) echo "<p style='color:red; font-size:0.8em;'>DEBUG SQL Error: " . $conn->error . "</p>";
+                if pg_last_error($conn) echo "<p style='color:red; font-size:0.8em;'>DEBUG SQL Error: " . pg_last_error($conn) . "</p>";
             }
             echo "</div>";
         }
