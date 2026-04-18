@@ -127,7 +127,73 @@
       </div>
     </section>
 
-     <section id="projects">
+     .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      overflow: auto;
+    }
+
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .mySlides { display: none; text-align: center; }
+    .mySlides img { max-height: 80vh; width: auto; max-width: 100%; border-radius: 8px; }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 25px;
+      color: #fff; font-size: 40px; font-weight: bold; transition: 0.3s;
+      cursor: pointer; z-index: 1001;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      user-select: none;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+    }
+
+    .next { right: 0; }
+    .prev { left: 0; }
+
+    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>VEERAPHONE SENGCHIAM</h1>
+        <p class="tagline">Computer Science B.S. Student at CSU Stanislaus | Focus on AI + Cybersecurity.</p>
+      </div>
+      <div class="btns">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="experience.html">Experience</a>
+        <a class="btn primary" href="#projects">Projects</a>
+        <a class="btn" href="https://github.com/VeeraSeng27">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/veeraphone-sengchiam-8a829829a/">LinkedIn</a>
+      </div>
+    </header>
+
+    <section id="projects">
       <h2>Project Highlights</h2>
       <div class="grid">
         
@@ -247,7 +313,7 @@
   </script>
 </body>
 </html>
-
+    
     <footer>
       <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
     </footer>
