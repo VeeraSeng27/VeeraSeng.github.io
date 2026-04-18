@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VEERAPHONE SENGCHIAM | CS Projects</title>
+  <title>VEERAPHONE SENGCHIAM | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   
   <style>
     :root { 
-      
-      --bg: #FFFFFF;      /* White */
-      --card: #000000;    /* Black */
-      --text: #FFFFFF;    /* White */
-      --muted: #000000;   /* Dark Green */
-      --accent: #000000;  /* DarkGoldRod */
+      --bg: #FFFFFF;      
+      --card-bg: #f8f9fa; /* Light grey for better contrast */
+      --text-dark: #1a1a1a;
+      --muted: #666666;   
+      --accent: #B8860B;  /* DarkGoldenRod for highlights */
     }
 
     * { box-sizing: border-box; }
@@ -21,8 +20,8 @@
     body { 
       margin:0; 
       font-family: 'Inter', system-ui, Arial, sans-serif; 
-      background:var(--bg); 
-      color:var(--text); 
+      background: var(--bg); 
+      color: var(--text-dark); 
       line-height: 1.6; 
     }
 
@@ -54,283 +53,159 @@
     .btns { display:flex; gap:12px; flex-wrap:wrap; }
     .btn {
       display:inline-block; padding:10px 22px; border-radius:12px; 
-      background:var(--card); border:1px solid rgba(255,126,103,0.1);
+      background: #000; color: #fff; border: 1px solid transparent;
       font-size: 14px; font-weight: 600;
     }
-    .btn:hover { border-color: var(--accent); background: rgba(255,126,103,0.05); }
-    .btn.primary { background: var(--accent); border:none; color:#B8860B; }
+    .btn:hover { background: #333; transform: translateY(-2px); }
+    .btn.primary { background: var(--accent); color: #fff; }
 
-    section { margin: 50px 0; }
-    h2 { margin: 0 0 24px; font-size: 24px; color: var(--accent); position: relative; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    section { margin: 60px 0; }
+    h2 { margin: 0 0 24px; font-size: 24px; color: #000; position: relative; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
     h2::before { content: ""; position: absolute; left: 0; top: 20%; height: 60%; width: 4px; background: var(--accent); border-radius: 2px; }
     
     .grid { display:grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    
     .card {
-      background: var(--card); border: 1px solid rgba(157,148,184,0.1);
+      background: var(--card-bg); border: 1px solid #eee;
       border-radius: 20px; padding: 28px; transition: 0.3s ease;
       display: flex; flex-direction: column;
     }
-    .card:hover { transform: translateY(-5px); border-color: rgba(255,126,103,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     .card h3 { margin:0 0 10px; font-size: 22px; font-weight: 700; }
+    .card img { border-radius: 10px; margin-bottom: 15px; cursor: pointer; }
     
-    .meta { color: #a78bfa; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-    ul { margin: 18px 0 0 20px; color: var(--muted); font-size: 14px; padding: 0; list-style-type: none; }
-    li { margin-bottom: 10px; position: relative; padding-left: 15px; }
+    .meta { color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    
+    ul { margin: 18px 0 0 0; color: var(--muted); font-size: 14px; padding: 0; list-style: none; }
+    li { margin-bottom: 8px; position: relative; padding-left: 20px; }
     li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
 
     .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: auto; padding-top: 20px; }
-    .chip { font-size: 11px; color: var(--accent); background: rgba(255,126,103,0.1); border: 1px solid rgba(255,126,103,0.2); padding:5px 14px; border-radius: 8px; font-weight: 600; }
+    .chip { font-size: 11px; color: #000; background: rgba(0,0,0,0.05); border: 1px solid #ddd; padding:5px 14px; border-radius: 8px; font-weight: 600; }
     
-    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>VEERAPHONE SENGCHIAM</h1>
-        <p class="tagline">Computer Science B.S. Student at CSU Stanislaus | Focus on AI + Cybersecurity.</p>
-      </div>
-      <div class="btns">
-        <a class="btn" href="https://github.com/VeeraSeng27">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/veeraphone-sengchiam-8a829829a/">LinkedIn</a>
-      </div>
-    </header>
-  <h2>About Me</h2>
-  <div class="card">
-        <p>
-          Nearing the completion of my B.S. in Computer Science at CSU Stanislaus, I have focused my studies
-          on Cybersecurity and high-performance computing. I’ve successfully engineered a multithreaded client-server 
-          applications and designed complex relational databases that prioritize data integrity. Proficient in Python, 
-          Java, and SQL, I am eager to apply my technical skills and Linux expertise to a professional security or development role
-        </p>
-     </div>
-    </section>
-
-     <section id="Experience">
-      <h2>Experience</h2>
-      <div class="grid">
-
-        <article class="card">
-          <div class="meta">Amazon • Kiva Amnesty • Tracy, CA</div>
-          <h3>Kiva Amnesty</h3>
-           <img src="Kiva bots.jpg" alt="Kiva robots">
-          <p>As an Amnesty Responder at Amazon, our primary responsibility was to ensure the smooth 
-            operation of robots, drives, and the maintenance floor. When a drive crashes, we would 
-            shut down the affected section to clear out damaged products and identify the cause of the 
-            failure. Any damaged products or malfunctioning drives were sent to designated locations for 
-            further handling. Amazon is a fast-paced work environment where a strong sense of urgency 
-            is essential. As employees, we had to think quickly and act efficiently. We were trained to 
-            handle most situations independently and only seek assistance when necessary.</p>
-        </article>
-        
-      </div>
-    </section>
-
-     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      padding-top: 50px;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.9);
-      overflow: auto;
-    }
-
-    .modal-content {
-      position: relative;
-      margin: auto;
-      padding: 0;
-      width: 90%;
-      max-width: 900px;
-    }
-
-    .mySlides { display: none; text-align: center; }
+    /* Modal / Lightbox */
+    .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+    .modal-content { position: relative; margin: auto; width: 90%; max-width: 900px; text-align: center; }
     .mySlides img { max-height: 80vh; width: auto; max-width: 100%; border-radius: 8px; }
+    .close { position: absolute; top: 10px; right: 25px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+    .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; color: white; font-weight: bold; font-size: 24px; background: rgba(0,0,0,0.5); border-radius: 50%; user-select: none; }
+    .next { right: 0; } .prev { left: 0; }
 
-    .close {
-      position: absolute;
-      top: 10px; right: 25px;
-      color: #fff; font-size: 40px; font-weight: bold; transition: 0.3s;
-      cursor: pointer; z-index: 1001;
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 24px;
-      user-select: none;
-      background: rgba(0,0,0,0.5);
-      border-radius: 50%;
-    }
-
-    .next { right: 0; }
-    .prev { left: 0; }
-
-    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
+    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>VEERAPHONE SENGCHIAM</h1>
-        <p class="tagline">Computer Science B.S. Student at CSU Stanislaus | Focus on AI + Cybersecurity.</p>
-      </div>
-      <div class="btns">
-        <a class="btn" href="index.html">Home</a>
-        <a class="btn" href="experience.html">Experience</a>
-        <a class="btn primary" href="#projects">Projects</a>
-        <a class="btn" href="https://github.com/VeeraSeng27">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/veeraphone-sengchiam-8a829829a/">LinkedIn</a>
-      </div>
-    </header>
 
-    <section id="projects">
-      <h2>Project Highlights</h2>
-      <div class="grid">
-        
-        <article class="card">
-          <div class="meta">MySQL • PHP • CS4250</div>
-          <h3>NFL Relational Database</h3>
-          <div style="display: flex; gap: 5px;">
-            <img src="NFL db img 1.png" onclick="openModal();currentSlide(1)" style="width: 33%">
-            <img src="NFL db img 2.png" onclick="openModal();currentSlide(2)" style="width: 33%">
-            <img src="NFL db img 3.png" onclick="openModal();currentSlide(3)" style="width: 33%">
-          </div>
-          <p>Developed a web-enabled database system for the CS4250 project at CSU Stanislaus.</p>
-          <ul>
-            <li>Engineered relational schema based on NFL references.</li>
-            <li>Implemented data integrity using a server hosted on dragon.csustan.edu.</li>
-            <li>Created analytics queries to compare historical data.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Database Design</span><span class="chip">MySQL</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="meta">Java • TCP Sockets</div>
-          <h3>Tic-Tac-Toe Game</h3>
-          <img src="Tic-Tac-Toe.png" alt="Tic-Tac-Toe Game">
-          <p>Developed a network-based game using Java, TCP sockets, and multithreading.</p>
-          <ul>
-            <li>Client–server architecture with synchronized game state.</li>
-            <li>Java Swing GUI with event-driven logic.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">TCP Sockets</span><span class="chip">Java Swing GUI</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="meta">Networking • Analysis</div>
-          <h3>Network Tools & Analysis</h3>
-          <p>Practical application of networking concepts, including subnetting and path analysis.</p>
-          <ul>
-            <li>Calculated subnet masks and IP ranges.</li>
-            <li>Interpreted traceroute results to diagnose hop behavior.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Subnetting</span><span class="chip">Traceroute</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <div id="myModal" class="modal">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
-        <div class="mySlides">
-          <img src="NFL db img 1.png">
-        </div>
-        <div class="mySlides">
-          <img src="NFL db img 2.png">
-        </div>
-        <div class="mySlides">
-          <img src="NFL db img 3.png">
-        </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>VEERAPHONE SENGCHIAM</h1>
+      <p class="tagline">Computer Science B.S. Student at CSU Stanislaus | Focus on AI + Cybersecurity.</p>
     </div>
+    <div class="btns">
+      <a class="btn" href="#about">About</a>
+      <a class="btn primary" href="#projects">Projects</a>
+      <a class="btn" href="https://github.com/VeeraSeng27">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/veeraphone-sengchiam-8a829829a/">LinkedIn</a>
+    </div>
+  </header>
 
-    <footer>
-      <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
-    </footer>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        Nearing the completion of my B.S. in Computer Science at CSU Stanislaus, I have focused my studies
+        on Cybersecurity and high-performance computing. I’ve successfully engineered multithreaded client-server 
+        applications and designed complex relational databases that prioritize data integrity. Proficient in Python, 
+        Java, and SQL, I am eager to apply my technical skills and Linux expertise to a professional security or development role.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="meta">Amazon • Kiva Amnesty • Tracy, CA</div>
+        <h3>Kiva Amnesty</h3>
+        <p>Managed the operation of floor robots and maintenance of drive units in a high-intensity environment. Responsibilities included troubleshooting hardware failures, managing section shutdowns for safety, and acting with urgency to maintain warehouse throughput.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Project Highlights</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="meta">MySQL • PHP • CS4250</div>
+        <h3>NFL Relational Database</h3>
+        <div style="display: flex; gap: 5px;">
+          <img src="NFL db img 1.png" onclick="openModal();currentSlide(1)" style="width: 33%" alt="DB Screenshot 1">
+          <img src="NFL db img 2.png" onclick="openModal();currentSlide(2)" style="width: 33%" alt="DB Screenshot 2">
+          <img src="NFL db img 3.png" onclick="openModal();currentSlide(3)" style="width: 33%" alt="DB Screenshot 3">
+        </div>
+        <p>Engineered a relational schema and web-enabled database for historical NFL data analysis.</p>
+        <ul>
+          <li>Hosted on dragon.csustan.edu.</li>
+          <li>Implemented rigorous data integrity constraints.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Database Design</span><span class="chip">MySQL</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">Java • TCP Sockets</div>
+        <h3>Tic-Tac-Toe Game</h3>
+        <p>A multithreaded client-server game featuring a synchronized state and a Java Swing GUI.</p>
+        <div class="chips">
+          <span class="chip">Networking</span><span class="chip">Java Swing</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</p>
+  </footer>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <div class="mySlides"><img src="NFL db img 1.png" alt="Detail 1"></div>
+    <div class="mySlides"><img src="NFL db img 2.png" alt="Detail 2"></div>
+    <div class="mySlides"><img src="NFL db img 3.png" alt="Detail 3"></div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
+</div>
 
-  <script>
-    // Update year
-    document.getElementById("year").textContent = new Date().getFullYear();
+<script>
+  // Set Current Year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Lightbox Logic
-    let slideIndex = 1;
+  // Modal Logic
+  let slideIndex = 1;
+  function openModal() { document.getElementById("myModal").style.display = "block"; }
+  function closeModal() { document.getElementById("myModal").style.display = "none"; }
+  function plusSlides(n) { showSlides(slideIndex += n); }
+  function currentSlide(n) { showSlides(slideIndex = n); }
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+    slides[slideIndex-1].style.display = "block";
+  }
+  window.onclick = function(event) {
+    let modal = document.getElementById("myModal");
+    if (event.target == modal) { closeModal(); }
+  }
+</script>
 
-    function openModal() {
-      document.getElementById("myModal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("myModal").style.display = "none";
-    }
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex-1].style.display = "block";
-    }
-
-    // Close modal when clicking outside of image
-    window.onclick = function(event) {
-      let modal = document.getElementById("myModal");
-      if (event.target == modal) {
-        closeModal();
-      }
-    }
-  </script>
 </body>
 </html>
-    
-    <footer>
-      <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
-
-
-
-
-
-
 
 
 
