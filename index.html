@@ -127,6 +127,127 @@
       </div>
     </section>
 
+     <section id="projects">
+      <h2>Project Highlights</h2>
+      <div class="grid">
+        
+        <article class="card">
+          <div class="meta">MySQL • PHP • CS4250</div>
+          <h3>NFL Relational Database</h3>
+          <div style="display: flex; gap: 5px;">
+            <img src="NFL db img 1.png" onclick="openModal();currentSlide(1)" style="width: 33%">
+            <img src="NFL db img 2.png" onclick="openModal();currentSlide(2)" style="width: 33%">
+            <img src="NFL db img 3.png" onclick="openModal();currentSlide(3)" style="width: 33%">
+          </div>
+          <p>Developed a web-enabled database system for the CS4250 project at CSU Stanislaus.</p>
+          <ul>
+            <li>Engineered relational schema based on NFL references.</li>
+            <li>Implemented data integrity using a server hosted on dragon.csustan.edu.</li>
+            <li>Created analytics queries to compare historical data.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Database Design</span><span class="chip">MySQL</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="meta">Java • TCP Sockets</div>
+          <h3>Tic-Tac-Toe Game</h3>
+          <img src="Tic-Tac-Toe.png" alt="Tic-Tac-Toe Game">
+          <p>Developed a network-based game using Java, TCP sockets, and multithreading.</p>
+          <ul>
+            <li>Client–server architecture with synchronized game state.</li>
+            <li>Java Swing GUI with event-driven logic.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">TCP Sockets</span><span class="chip">Java Swing GUI</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="meta">Networking • Analysis</div>
+          <h3>Network Tools & Analysis</h3>
+          <p>Practical application of networking concepts, including subnetting and path analysis.</p>
+          <ul>
+            <li>Calculated subnet masks and IP ranges.</li>
+            <li>Interpreted traceroute results to diagnose hop behavior.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Subnetting</span><span class="chip">Traceroute</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <img src="NFL db img 1.png">
+        </div>
+        <div class="mySlides">
+          <img src="NFL db img 2.png">
+        </div>
+        <div class="mySlides">
+          <img src="NFL db img 3.png">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
+    </footer>
+  </div>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lightbox Logic
+    let slideIndex = 1;
+
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+
+    // Close modal when clicking outside of image
+    window.onclick = function(event) {
+      let modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
+
     <footer>
       <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
     </footer>
