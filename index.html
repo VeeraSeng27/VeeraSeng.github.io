@@ -91,6 +91,25 @@
     .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; color: white; font-weight: bold; font-size: 24px; background: rgba(0,0,0,0.5); border-radius: 50%; user-select: none; }
     .next { right: 0; } .prev { left: 0; }
 
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #eee;
+
+      .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px;}
+      .btn {
+        display: inline-block; padding: 10px 22px; border-radius: 12px; 
+        background: #000; color: #fff; text-decroation: none; border: 1px solid transparent; 
+        size: 144px; front-weight: 600; 
+        transition: all 0.3s ease;
+
+      }
+      .btn:hover { background: #333; transform: translateY(-2px); } 
+      
+      
+
     footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
@@ -114,7 +133,7 @@
     <div class="card">
       <p>
         Nearing the completion of my B.S. in Computer Science at CSU Stanislaus, I have focused my studies
-        on Cybersecurity and high-performance computing. I’ve successfully engineered multithreaded client-server 
+        on Cybersecurity and high-performance computing. I’ve successfully engineered a multithreaded client-server 
         applications and designed complex relational databases that prioritize data integrity. Proficient in Python, 
         Java, and SQL, I am eager to apply my technical skills and Linux expertise to a professional security or development role.
       </p>
