@@ -1,19 +1,21 @@
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veeraphone | CS Projects</title>
+  <title>VEERAPHONE SENGCHIAM | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   
   <style>
     :root { 
-      /* Cyber Sunset Palette */
-      --bg: #120d1d;      /* Deep Eggplant */
-      --card: #1c162d;    /* Muted Purple */
-      --text: #f0eeff;    /* Ice White */
-      --muted: #9d94b8;   /* Lavender Grey */
-      --accent: #ff7e67;  /* Soft Coral */
+      --bg: #FFFFFF;      
+      --card-bg: #f8f9fa;
+      --text-dark: #1a1a1a;
+      --muted: #666666;   
+      --accent: #B8860B; 
     }
 
     * { box-sizing: border-box; }
@@ -21,8 +23,8 @@
     body { 
       margin:0; 
       font-family: 'Inter', system-ui, Arial, sans-serif; 
-      background:var(--bg); 
-      color:var(--text); 
+      background: var(--bg); 
+      color: var(--text-dark); 
       line-height: 1.6; 
     }
 
@@ -31,140 +33,195 @@
     .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
     
     header { 
-      display:flex; 
-      flex-wrap:wrap; 
-      gap:20px; 
-      align-items:flex-end; 
-      justify-content:space-between; 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 30px; 
+      align-items: center; 
+      justify-content: space-between; 
       margin-bottom: 50px; 
     }
+
+    .header-text { flex: 1; min-width: 300px; }
 
     h1 { 
       margin:0; 
       font-size: 42px; 
       letter-spacing: -1px; 
-      background: linear-gradient(to right, #ff7e67, #a78bfa); 
+      background: linear-gradient(to right, #000000, #616161); 
       -webkit-background-clip: text; 
       -webkit-text-fill-color: transparent; 
       font-weight: 800;
     }
-
+    
     .tagline { margin:10px 0 0; color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
     
-    .btns { display:flex; gap:12px; flex-wrap:wrap; }
-    .btn {
-      display:inline-block; padding:10px 22px; border-radius:12px; 
-      background:var(--card); border:1px solid rgba(255,126,103,0.1);
-      font-size: 14px; font-weight: 600;
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f0f0f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .btn:hover { border-color: var(--accent); background: rgba(255,126,103,0.05); }
-    .btn.primary { background: var(--accent); border:none; color:#120d1d; }
 
-    section { margin: 50px 0; }
-    h2 { margin: 0 0 24px; font-size: 24px; color: var(--accent); position: relative; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .btn {
+      display: inline-block; padding: 10px 22px; border-radius: 12px; 
+      background: #000; color: #fff; border: 1px solid transparent;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn:hover { background: #333; transform: translateY(-2px); color: #fff; }
+
+    section { margin: 60px 0; }
+    h2 { margin: 0 0 24px; font-size: 24px; color: #000; position: relative; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
     h2::before { content: ""; position: absolute; left: 0; top: 20%; height: 60%; width: 4px; background: var(--accent); border-radius: 2px; }
     
     .grid { display:grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
     .card {
-      background: var(--card); border: 1px solid rgba(157,148,184,0.1);
+      background: var(--card-bg); border: 1px solid #eee;
       border-radius: 20px; padding: 28px; transition: 0.3s ease;
       display: flex; flex-direction: column;
     }
-    .card:hover { transform: translateY(-5px); border-color: rgba(255,126,103,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     .card h3 { margin:0 0 10px; font-size: 22px; font-weight: 700; }
+    .card img { border-radius: 10px; margin-bottom: 15px; cursor: pointer; width: 100%; }
     
-    .meta { color: #a78bfa; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-    ul { margin: 18px 0 0 20px; color: var(--muted); font-size: 14px; padding: 0; list-style-type: none; }
-    li { margin-bottom: 10px; position: relative; padding-left: 15px; }
+    .meta { color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    ul { margin: 18px 0 0 0; color: var(--muted); font-size: 14px; padding: 0; list-style: none; }
+    li { margin-bottom: 8px; position: relative; padding-left: 20px; }
     li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
 
     .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: auto; padding-top: 20px; }
-    .chip { font-size: 11px; color: var(--accent); background: rgba(255,126,103,0.1); border: 1px solid rgba(255,126,103,0.2); padding:5px 14px; border-radius: 8px; font-weight: 600; }
+    .chip { font-size: 11px; color: #000; background: rgba(0,0,0,0.05); border: 1px solid #ddd; padding:5px 14px; border-radius: 8px; font-weight: 600; }
     
-    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--card); color: var(--muted); font-size: 14px; text-align: center; }
+    /* Modal / Lightbox */
+    .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+    .modal-content { position: relative; margin: auto; width: 90%; max-width: 900px; text-align: center; }
+    .mySlides img { max-height: 80vh; width: auto; max-width: 100%; border-radius: 8px; }
+    .close { position: absolute; top: 10px; right: 25px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+    .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; color: white; font-weight: bold; font-size: 24px; background: rgba(0,0,0,0.5); border-radius: 50%; user-select: none; }
+    .next { right: 0; } .prev { left: 0; }
+
+    footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Veeraphone Sengchiam</h1>
-        <p class="tagline">Computer Science B.S. Student at CSU Stanislaus | Focus on AI + Cybersecurity.</p>
-      </div>
+
+<div class="wrap">
+  <header>
+    <div class="header-text">
+      <h1>VEERAPHONE SENGCHIAM</h1>
+      <p class="tagline">Computer Science B.S. Student at CSU Stanislaus | Focus on AI + Cybersecurity.</p>
       <div class="btns">
-        <a class="btn primary" href="#projects">View Lab Reports</a>
-        <a class="btn" href="https://github.com/VeeraSeng27">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/veeraphone-sengchiam-8a829829a/">LinkedIn</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="https://github.com/VeeraSeng27" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/veeraphone-sengchiam-8a829829a/" target="_blank">LinkedIn</a>
       </div>
-    </header>
+    </div>
+    <img src="profile.jpg" alt="Veeraphone Sengchiam" class="profile-photo">
+  </header>
 
-    <section id="projects">
-      <h2>Project Highlights</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="meta">MySQL • PHP • CS4250</div>
-          <h3>NFL Relational Database</h3>
-          <p>Developed a web-enabled database system for the CS4250 project at CSU Stanislaus.</p>
-          <ul>
-            <li>Engineered relational schema based on NFL references and images.</li>
-            <li>Implemented data integrity using a server hosted on dragon.csustan.edu.</li>
-            <li>Created analytics queries to compare historical data to real-world systems.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Database Design</span><span class="chip">MySQL</span>
-          </div>
-        </article>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        Nearing the completion of my B.S. in Computer Science at CSU Stanislaus, I have focused my studies
+        on Cybersecurity and high-performance computing. I’ve successfully engineered multithreaded client-server 
+        applications and designed complex relational databases that prioritize data integrity. Proficient in Python, 
+        Java, and SQL, I am eager to apply my technical skills and Linux expertise to a professional security or development role.
+      </p>
+    </div>
+  </section>
 
-        <article class="card">
-          <div class="meta">Operating Systems • Linux</div>
-          <h3>SteamOS Case Study</h3>
-          <p>Technical analysis of performance optimizations within gaming-focused operating systems.</p>
-          <ul>
-            <li>Analyzed CPU scheduling and memory management tradeoffs.</li>
-            <li>Evaluated graphics performance and the Proton compatibility layer.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">OS Concepts</span><span class="chip">Performance</span>
-          </div>
-        </article>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="meta">Amazon • Kiva Amnesty • Tracy, CA</div>
+        <h3>Kiva Amnesty</h3>
+        <p>Managed the operation of floor robots and maintenance of drive units in a high-intensity environment. Responsibilities included troubleshooting hardware failures, managing section shutdowns for safety, and acting with urgency to maintain warehouse throughput.</p>
+      </article>
+    </div>
+  </section>
 
-        <article class="card">
-          <div class="meta">Networking • Analysis</div>
-          <h3>Network Tools & Analysis</h3>
-          <p>Practical application of networking concepts including subnetting and path analysis.</p>
-          <ul>
-            <li>Calculated subnet masks and IP ranges for network design.</li>
-            <li>Interpreted traceroute results to diagnose hop behavior.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Subnetting</span><span class="chip">Traceroute</span>
-          </div>
-        </article>
-      </div>
-    </section>
+  <section id="projects">
+    <h2>Project Highlights</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="meta">MySQL • PHP • CS4250</div>
+        <h3>NFL Relational Database</h3>
+        <div style="display: flex; gap: 5px;">
+          <img src="NFL db img 1.png" onclick="openModal();currentSlide(1)" style="width: 33%" alt="DB Screenshot 1">
+          <img src="NFL db img 2.png" onclick="openModal();currentSlide(2)" style="width: 33%" alt="DB Screenshot 2">
+          <img src="NFL db img 3.png" onclick="openModal();currentSlide(3)" style="width: 33%" alt="DB Screenshot 3">
+        </div>
+        <p>Engineered a relational schema and web-enabled database for historical NFL data analysis.</p>
+        <ul>
+          <li>Hosted on dragon.csustan.edu.</li>
+          <li>Implemented rigorous data integrity constraints.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Database Design</span><span class="chip">MySQL</span>
+        </div>
+      </article>
 
-    <section>
-      <h2>About Me</h2>
-      <div class="card">
-        <p>
-          I am pursuing my B.S. in Computer Science at **CSU Stanislaus** with a specific focus on **Cybersecurity**. 
-          My hands-on experience includes building client-server applications using Java sockets, multithreading, and 
-          designing relational databases with strong data integrity. I am proficient in Python, Java, SQL, 
-          and working within Linux environments.
-        </p>
-      </div>
-    </section>
+      <article class="card">
+        <div class="meta">Java • TCP Sockets</div>
+        <h3>Tic-Tac-Toe Game</h3>
+        <div style="display: flex; gap: 5px;">
+          <img src="Tic-Tac-Toe.png" onclick="openModal();currentSlide(4)" style="width: 33%" alt="TTT Screenshot 1">
+        </div>
+        <p>A multithreaded client-server game featuring a synchronized state and a Java Swing GUI.</p>
+        <ul>
+          <li> Engineered a networked environment using TCP Sockets.</li>
+          <li>Built a front-end using Java Swing that communicates in real-time with the back-end.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Networking</span><span class="chip">Java Swing</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    <footer>
-      <div>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</div>
-    </footer>
+  <footer>
+    <p>© <span id="year"></span> Veeraphone Sengchiam • Computer Science @ CSU Stanislaus</p>
+  </footer>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <div class="mySlides"><img src="NFL db img 1.png" alt="Detail 1"></div>
+    <div class="mySlides"><img src="NFL db img 2.png" alt="Detail 2"></div>
+    <div class="mySlides"><img src="NFL db img 3.png" alt="Detail 3"></div>
+    <div class="mySlides"><img src="Tic-Tac-Toe.png" alt="Tic Tac Toe"></div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
+</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  let slideIndex = 1;
+  function openModal() { document.getElementById("myModal").style.display = "block"; }
+  function closeModal() { document.getElementById("myModal").style.display = "none"; }
+  function plusSlides(n) { showSlides(slideIndex += n); }
+  function currentSlide(n) { showSlides(slideIndex = n); }
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+    slides[slideIndex-1].style.display = "block";
+  }
+  window.onclick = function(event) {
+    let modal = document.getElementById("myModal");
+    if (event.target == modal) { closeModal(); }
+  }
+</script>
+
 </body>
 </html>
-
-
-
